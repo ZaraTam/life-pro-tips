@@ -28,6 +28,7 @@ class App extends Component {
           <p>
             Made by Zara Tam
             <ul>
+              <li><a href="http://zaratam.com" target="_blank"><i className="fa fa-home socialmedia" aria-hidden="true"></i></a></li>
               <li><a href="https://www.linkedin.com/in/zaratam" target="_blank"><i className="fa fa-linkedin-square socialmedia" aria-hidden="true"></i></a></li>
               <li><a href="https://twitter.com/zaratam" target="_blank"><i className="fa fa-twitter-square socialmedia" aria-hidden="true"></i></a></li>
               <li><a href="https://www.facebook.com/zara.tam" target="_blank"><i className="fa fa-facebook-square socialmedia" aria-hidden="true"></i></a></li>
