@@ -99,6 +99,7 @@ input[type=text] {
 
 a {
     color: #2a2a2a;
+    text-decoration: underline;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -108,4 +109,5 @@ a:link,
 a:hover,
 a:focus {
     color: #2a2a2a;
+    text-decoration: underline;
 }
