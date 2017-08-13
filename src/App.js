@@ -14,16 +14,16 @@ class App extends Component {
         <div className="App-search">
           <form className="search-bar">
             <i className="fa fa-search search-icon"></i>
-            <input type="text" />            
+            <input id="keywords" type="text" />            
           </form>
-          <button className="button" type="submit">Search</button>
-          <button className="button" type="submit">I'm feeling lucky</button>
+          <button className="button" type="submit" onClick="getProTips()">Search</button>
+          <button className="button" type="submit" onClick="getLucky()">I'm feeling lucky</button>
         </div>
 
         <footer className="App-footer">
           <p>Powered by <a href="https://www.reddit.com/r/LifeProTips/" target="_blank">LifeProTips</a> and <a href="https://www.reddit.com/r/ShittyLifeProTips/" target="_blank">ShittyLifeProTips</a></p>
         </footer>
-         
+
         <div className="Zara">
           <p>
             Made by Zara Tam
