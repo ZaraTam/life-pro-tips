@@ -47,24 +47,18 @@
 
     <script>
       
-          var url = "https://www.reddit.com/r/LifeProTips/search.json?";
+          var url = "https://www.reddit.com/r/LifeProTips/search.json?q=happy&restrict_sr=on&sort=relevance&limit=3";
 
-          var payload = {
-              q: "happy",
-              restrict_sr: "on",
-              limit: 3
-          };
-
-          fetch(url, payload)
+          fetch(url)
           .then((response) => response.json())
           .then(function(data) {
               console.log(data);
               console.log(data.data.children.length)
-              // var i;
-              // for (i = 0; i < data.data.children.length; i++) {
-              //     var lifeprotip = data.data.children[i].data.title;
-              //     var permalink = "https://www.reddit.com" + data.data.children[i].data.permalink
-              //     console.log(lifeprotip, permalink)
+              var i;
+              for (i = 0; i < data.data.children.length; i++) {
+                  var lifeprotip = data.data.children[i].data.title;
+                  var permalink = "https://www.reddit.com" + data.data.children[i].data.permalink
+                  console.log(lifeprotip, permalink)
           })
           .catch(function(error) {
               console.log(error);

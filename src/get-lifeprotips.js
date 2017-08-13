@@ -1,15 +1,8 @@
-function getLifeProTips(keywords) {
+export function getLifeProTips(keywords) {
 
-    var url = "https://www.reddit.com/r/LifeProTips/search.json?";
+    var url = "https://www.reddit.com/r/LifeProTips/search.json?q=${keywords}&restrict_sr=true&sort=relevance&limit=3";
 
-    var payload = {
-        q: keywords,
-        restrict_sr: "on",
-        sort: "relevance",
-        limit: 3
-    };
-
-    fetch(url, payload)
+    fetch(url)
     .then((response) => response.json())
     .then(function(data) {
         console.log(data);
@@ -26,18 +19,11 @@ function getLifeProTips(keywords) {
 }
 
 
-function getShittyLifeProTips(keywords) {
+export function getShittyLifeProTips(keywords) {
 
-    var url = "https://www.reddit.com/r/ShittyLifeProTips/search.json?";
+    var url = "https://www.reddit.com/r/ShittyLifeProTips/search.json?q=${keywords}&restrict_sr=true&sort=relevance&limit=3";
 
-    var payload = {
-        q: keywords,
-        restrict_sr: "on",
-        sort: "relevance",
-        limit: 3
-    };
-
-    fetch(url, payload)
+    fetch(url)
     .then((response) => response.json())
     .then(function(data) {
         console.log(data);
@@ -54,14 +40,14 @@ function getShittyLifeProTips(keywords) {
 }
 
 
-function getProTips(keywords) {
+export function getProTips(keywords) {
 
     getLifeProTips(keywords);
     getShittyLifeProTips(keywords);
 }
 
 
-function isLucky(is_lucky) {
+export function isLucky(is_lucky) {
 
     var sort_options = ["relevance", "hot", "top", "new", "comments"];
     var sort_by = is_lucky == 0 ? "relevance" : sort_options[Math.floor(Math.random() * sort_options.length)];

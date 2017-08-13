@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
+import { getLifeProTips, getShittyLifeProTips, getProTips, isLucky } from "./get-lifeprotips";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      query: ""
+    };
+  }
+
   render() {
     return (
       <div className="App">
@@ -16,8 +25,8 @@ class App extends Component {
             <i className="fa fa-search search-icon"></i>
             <input id="keywords" type="text" />            
           </form>
-          <button className="button" type="submit" onClick="getProTips()">Search</button>
-          <button className="button" type="submit" onClick="getLucky()">I'm feeling lucky</button>
+          <button className="button" type="submit" onClick={getProTips}>Search</button>
+          <button className="button" type="submit" onClick={isLucky}>I'm feeling lucky</button>
         </div>
 
         <footer className="App-footer">
