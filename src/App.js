@@ -12,10 +12,12 @@ class App extends Component {
   }
 
   render() {
+    const { query } = this.state
+    console.log('query:', query )
     return (
       <div className="App">
 
-        <div className="App-header"> 
+        <div className="App-header">
           <h1>Life Pro Tips of the moment</h1>
           <i className="fa fa-lightbulb-o logo" aria-hidden="true"></i>
         </div>
@@ -23,10 +25,10 @@ class App extends Component {
         <div className="App-search">
           <form className="search-bar">
             <i className="fa fa-search search-icon"></i>
-            <input id="keywords" type="text" />            
+            <input id="keywords" type="text" onChange={e => this.setState({ query: e.target.value })}/>
           </form>
-          <button className="button" type="submit" onClick={getProTips}>Search</button>
-          <button className="button" type="submit" onClick={isLucky}>I'm feeling lucky</button>
+          <button className="button" type="submit" onClick={() => getProTips(query)}>Search</button>
+          <button className="button" type="submit" onClick={() => getProTips(query)}>I'm feeling lucky</button>
         </div>
 
         <footer className="App-footer">
